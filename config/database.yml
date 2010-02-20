@@ -1,0 +1,19 @@
+base: &base
+  adapter: mongodb
+  # em tempo de execucao vamos adicionar o "-#{Rails.env}" ao nomo do banco
+  database: "teste3"
+# Se estiver rodando o mongodb em outro host, 
+#vc deveria autenticar-se
+  #host: genesis.mongohq.com
+  #username: your-username
+  #password: your-password
+
+# use as proximas linhas para colocar algo especifico a cada ambiente
+development:
+  <<: *base
+ 
+test:
+  <<: *base
+ 
+production:
+  <<: *base
